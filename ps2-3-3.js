@@ -19,5 +19,17 @@ d3.select("svg")
     r: 3,
     cx: d => d * 200,
     cy: 200,
-    fill: "red"
+    fill: "black"
   })
+
+d3.select("svg")
+  .selectAll("circle")
+  .data(center2)
+  .join("circle")
+  .transition()
+  .duration(1000)
+  .attrs({
+    cx: d => d * 200,
+    cy: 200,
+    r: 10,
+    fill: "red"})
